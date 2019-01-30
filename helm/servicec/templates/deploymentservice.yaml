@@ -1,0 +1,33 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: servicec
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: servicec
+    spec:
+      containers:
+      - name: servicec
+        image: dnivra26/servicec:0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081
+          name: http-port
+          protocol: TCP
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: servicec
+spec:
+  ports:
+  - name: http-web
+    port: 8081
+    targetPort: 8081
+  selector:
+    app: servicec
