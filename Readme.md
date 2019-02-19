@@ -10,4 +10,4 @@
 ```helm upgrade --install servicec ./servicec --namespace servicec```  
 
 ### Service Diagram
-![service diagram](https://raw.githubusercontent.com/dnivra26/istio_1-1/master/service_diagram_istio.png)
+![service diagram](https://raw.githubusercontent.com/dnivra26/istio_101/master/service_diagram_istio.png)
